@@ -1,0 +1,14 @@
+outputs/
+*.zip
+*.pkl
+*.mp4
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store
+
+# local-only Claude Code manual (not for the public repo)
+CLAUDE.md

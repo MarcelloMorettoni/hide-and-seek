@@ -1,0 +1,50 @@
+arena:
+  preset: room
+  size: 10.0
+agent:
+  max_speed: 3.0
+  hider_speed_frac: 0.65
+  max_turn: 1.5
+  control_freq: 20.0
+  allow_reverse: false
+vision:
+  n_rays: 16
+  lidar_range: 8.0
+  lidar_height: 0.6
+  fov: 1.9
+  view_range: 20.0
+  catch_radius: 1.6
+  catch_needs_line_of_sight: false
+match:
+  match_time: 20.0
+  prep_time: 1.0
+  seeker_see_reward: 1.0
+  seeker_time_penalty: 0.02
+  seeker_pursue_weight: 0.15
+  catch_bonus: 50.0
+  hider_hidden_reward: 0.6
+  hider_seen_penalty: 1.0
+  hider_flee_weight: 0.05
+  caught_penalty: 50.0
+  move_penalty: 0.005
+train:
+  algo: ppo
+  rounds: 12
+  steps_per_phase: 150000
+  pool_size: 5
+  eval_matches: 12
+  n_envs: 8
+  seed: 0
+  device: cpu
+  policy_hidden:
+  - 256
+  - 256
+  learning_rate: 0.0003
+  gamma: 0.99
+  gae_lambda: 0.95
+  n_steps: 512
+  batch_size: 2048
+  n_epochs: 8
+  ent_coef: 0.005
+  log_dir: outputs
+  run_name: null

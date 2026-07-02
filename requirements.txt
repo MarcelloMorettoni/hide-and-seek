@@ -1,0 +1,11 @@
+# Hide-and-seek stack (tested on Python 3.11 / the shared `sim2real` conda env).
+# Editable install with console scripts:  pip install -e .
+mujoco>=3.2,<4
+gymnasium>=0.29,<2
+numpy>=1.24
+stable-baselines3>=2.3
+pyyaml>=6.0
+imageio>=2.30
+imageio-ffmpeg>=0.4
+tensorboard>=2.14
+rich>=13.0

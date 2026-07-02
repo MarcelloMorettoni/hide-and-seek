@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hide-and-seek"
+version = "0.1.0"
+description = "Multi-agent self-play hide-and-seek: articulated humanoids in a walled arena (MuJoCo + PPO)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "mujoco>=3.2,<4",
+    "gymnasium>=0.29,<2",
+    "numpy>=1.24",
+    "stable-baselines3>=2.3",
+    "pyyaml>=6.0",
+    "imageio>=2.30",
+    "imageio-ffmpeg>=0.4",
+    "tensorboard>=2.14",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+hideseek-train = "hideseek.train:main"
+hideseek-match = "hideseek.match:main"
+hideseek-watch = "hideseek.visualize:main"
+
+[tool.setuptools]
+packages = ["hideseek"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
